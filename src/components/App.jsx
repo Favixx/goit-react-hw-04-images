@@ -38,7 +38,7 @@ export const App = () => {
       }
     }
     fetchImages()
-  }, [searchQuery, currentPage, setTotalHits]);
+  }, [searchQuery, currentPage]);
   const handleFormSubmit = (query) => {
     setSearchQuery(query)
     setImages([])
