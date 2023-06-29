@@ -26,7 +26,7 @@ export const App = () => {
       try {
         const response = await getGalleryData(searchQuery, currentPage);
         setImages((prevImages) => [...prevImages, ...response.hits]);
-        setTotalHits(totalHits);
+        setTotalHits(response.totalHits);
       }
 
       catch (error) {
@@ -38,7 +38,7 @@ export const App = () => {
       }
     }
     fetchImages()
-  }, [searchQuery, currentPage]);
+  }, [searchQuery, currentPage, setTotalHits]);
   const handleFormSubmit = (query) => {
     setSearchQuery(query)
     setImages([])
